@@ -56,6 +56,8 @@ type CurryingFunc<Func> = Func extends (...args: infer Params) => infer Return
   ? CurriedFunc<Params, Return>
   : never;
 
+type Func = (...args: any[]) => any;
+
 function currying<Func>(fn: Func): CurryingFunc<Func>;
 
 function currying(fn: Func) {
